@@ -1,0 +1,126 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+*  {
+    margin:0;
+    padding:0;
+}
+
+body {
+    background: gainsboro;
+    border: 0;
+    height: 100%;
+}
+
+.main_wrapper {
+    margin:auto;
+    width:100%;
+}
+
+/*Estilo header*/
+
+#cabecalho{
+    height: 90px;
+    width: 100%;
+    background-color:#085F9F;	
+    box-shadow:0px 0px 5px black;
+    border-bottom: 1px solid #bfc3c5;
+    z-index: 999;
+}
+
+#cabecalho-espaco{
+    padding-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;    
+}
+
+#main_title {
+    display: inline-block;
+    float: left;
+    width: 25%;
+}
+
+#form-menu{
+    float: left;
+    width: 75%;
+}
+
+#menu_sup{
+    float: left;
+}
+
+#login{
+    float: right;
+}
+
+/*header {
+    background: url('images/line.png') repeat-x bottom;
+    position:relative;
+    width:100%;
+    height:80px;
+    top:0;
+    background-color:#085F9F;	
+    box-shadow:0px 0px 5px black;
+    border-bottom: 1px solid #bfc3c5;
+    z-index: 999;
+}*/
+
+#cabecalho h1 {
+    font:bold 18px 'Montserrat';
+    font-weight: normal;
+}
+
+#cabecalho logo{
+    display: inline-block;
+    margin-bottom: 0px;
+    margin-left:25%;
+}
+
+/* Navigation */
+/*nav
+{
+    position:fixed;
+    display: inline-block;
+    width: 740px;
+    text-align: center;
+    margin-left:220px;
+    margin-top:30px;
+}
+nav ul
+{
+    list-style-type: none;
+}
+nav li
+{
+    display: inline-block;
+    margin-right: 15px;
+    font:bold 13px 'Montserrat';
+}*/
+td a
+{
+    font-size: 1.3em;
+    color: black;
+    padding-bottom: 3px;
+    text-decoration: none;
+}
+td a:hover
+{
+    color: white;
+    border-bottom: 3px solid white;
+}
+
+/*Estilo footer*/
+
+footer {
+    position:fixed;
+    width: 100%;
+    height:80px;
+    bottom:0px;
+    background-color:#085F9F;	
+    box-shadow:0px 0px 5px black;
+    border-top: 1px solid #bfc3c5;
+}
+
+.botao {
+    width:60px !important;
+    height:20px !important;
+}

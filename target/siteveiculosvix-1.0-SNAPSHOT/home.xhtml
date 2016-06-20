@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <link rel="stylesheet" href="resources/css/pages/home.css"/>
+        <script type="text/javascript" src="resources/js/main.js"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/template.xhtml">            
+            <ui:define name="content">                
+                <div align="center" class="main_wrapper">    	
+                    <div class="pesquisa-simples">
+                        <h1>
+                            OFERTAS EM DESTAQUE
+                        </h1>
+                        <h:form>
+                            <div id="form-combo">                            
+                                <h:selectOneMenu id="veiculos" value="#{veiculoBean.marcaSelecionada}">
+                                    <f:selectItems value="#{veiculoBean.listaMarcas}"
+                                                   var="marca"
+                                                   itemValue="#{marca}"
+                                                   itemLabel="#{marca}"/>                                    
+                                </h:selectOneMenu>
+                                <h:commandButton type="submit" value="Buscar" action="#{veiculoBean.buscarVeiculos(veiculoBean.marcaSelecionada)}" styleClass="botao"/>
+                            </div>
+                        </h:form>
+                    </div>
+                    <br></br>
+                    <hr></hr>
+                    <div id="container">
+                        <h:form>                         
+                                <h:dataTable value="#{veiculoBean.listaVeiculos}" var="veiculo" rules="rows" cellpadding="10">
+                                    <h:column>
+                                        <f:facet name="header">Marca</f:facet>
+                                            #{veiculo.marca}
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">Modelo</f:facet>                                       
+                                        <h:outputText value="#{veiculo.modelo}" rendered="true" />
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">Valor</f:facet>
+                                        <h:outputText value="R$ #{veiculo.valor}" rendered="true" />
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">Ano</f:facet>
+                                        <h:outputText value="#{veiculo.ano}" rendered="true" />
+                                    </h:column>                
+                                </h:dataTable>
+                        </h:form>
+                    </div>            
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

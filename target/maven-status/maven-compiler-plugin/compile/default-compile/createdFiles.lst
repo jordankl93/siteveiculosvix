@@ -1,0 +1,5 @@
+src\teste\Testando.class
+src\backingbean\VeiculoBean.class
+src\conexao\HibernateUtil.class
+src\model\Veiculo.class
+src\crudHibernate\VeiculoCrudHibernate.class

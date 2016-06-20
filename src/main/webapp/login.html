@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+	  <link rel="stylesheet" href="css/style.css"/>
+	  <link rel="stylesheet" href="css/pages/login.css"/>
+	  <script type="text/javascript" src="js/main.js"/></script>
+	  <title>VEICULOS VIX</title>  
+	</head>
+	<body>
+		<div class="main_wrapper">		
+			<header>
+				<div id="main_title">
+					<img src="img/car-logo.png" alt="Veículos Vix logo" id="logo" />
+					<h1>Veículos Vix</h1>
+				</div>
+
+				<nav>
+					<ul>
+						<li><a href="home.html">Home</a></li>
+						<li><a href="#">Fale Conosco</a></li>
+						<li><a href="#">Quem Somos</a></li>
+						<li><a href="#">Como Chegar</a></li>
+					</ul>
+				</nav>
+			</header>	
+			<div id="login-box-sombra">
+				<div id="login-box">
+				  <div id="login-box-label">
+					<a class="logo-dois" href="home.html">VEICULOS VIX</a>
+					<p id="login-label-top">Entre com seu Login e Senha</p>
+				  </div>
+				  <form action="acesso.html" method="post" name="dados-login" onSubmit="return loginSubmit();">
+					  <div class="input-div" id="input-usuario">
+						<input type="text" placeholder="Login ou Email" name="login"/>
+					  </div>
+					  <div class="input-div" id="input-senha">
+						<input type="password" placeholder="Senha" name="senha"/>
+					  </div>
+					  <div id="botoes">
+						<input id="botao" name="Submit" type="submit" value="Entrar">
+						<div id="esqueceu-senha">
+						  <a href="http://www.google.com.br/">Esqueceu sua senha?</a>
+						</div>
+					  </div>
+				  </form>
+				</div>
+			</div>
+			<footer></footer>
+		</div>
+	</body>
+</html>

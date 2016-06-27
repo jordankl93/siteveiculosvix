@@ -3,59 +3,67 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width"/>
-        <link rel="stylesheet" href="resources/css/pages/home.css"/>
-        <script type="text/javascript" src="resources/js/main.js"/>
     </h:head>
     <h:body>
-        <ui:composition template="/templates/template.xhtml">            
-            <ui:define name="content">                
-                <div align="center" class="main_wrapper">    	
-                    <div class="pesquisa-simples">
-                        <h1>
-                            OFERTAS EM DESTAQUE
-                        </h1>
-                        <h:form>
-                            <div id="form-combo">                            
-                                <h:selectOneMenu id="veiculos" value="#{veiculoBean.marcaSelecionada}">
-                                    <f:selectItems value="#{veiculoBean.listaMarcas}"
-                                                   var="marca"
-                                                   itemValue="#{marca}"
-                                                   itemLabel="#{marca}"/>                                    
-                                </h:selectOneMenu>
-                                <h:commandButton type="submit" value="Buscar" action="#{veiculoBean.buscarVeiculos(veiculoBean.marcaSelecionada)}" styleClass="botao"/>
-                            </div>
-                        </h:form>
+        <f:view contentType="text/html">
+            <ui:composition template="/templates/template.xhtml">            
+                <ui:define name="content">                
+                    <div align="center" class="main_wrapper">    	
+                        <div class="pesquisa-simples">
+                            <h1>
+                                SELECIONE UM VEÍCULO
+                            </h1>
+                            <h:form>
+                                <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+
+                                    <p:selectOneMenu id="console" value="#{homeBean.marcaSelecionada}" style="width:200px">
+                                        <f:selectItems value="#{homeBean.listaMarcas}"
+                                                       var="marca"
+                                                       itemValue="#{marca}"
+                                                       itemLabel="#{marca}"/>                                    
+                                    </p:selectOneMenu>
+                                    <p:commandButton type="submit" value="Buscar" action="#{homeBean.buscarVeiculos(homeBean.marcaSelecionada)}" ajax="false"/>
+
+                                </h:panelGrid>
+                            </h:form>
+                        </div>
+                        <div id="container">
+                            <h:form>
+                                <p:dataGrid var="car" value="#{homeBean.listaVeiculos}" columns="3" layout="grid"
+                                            rows="12" paginator="true" id="cars"
+                                            paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
+
+                                    <f:facet name="header">
+                                        OFERTAS EM DESTAQUE
+                                    </f:facet>
+
+                                    <p:panel header="#{car.marca} #{car.modelo}" style="text-align:center">
+                                        <h:panelGrid columns="1" style="width:100%">
+
+
+                                            <h:outputText value="#{car.ano}" />
+                                            <h:outputText value="R$ #{car.valor}" />
+                                            
+                                            <p:commandLink action="home" title="Ver Detalhes" ajax="false">
+                                                <h:outputText styleClass="ui-icon ui-icon-search" style="margin:0 auto;" />
+                                                <f:setPropertyActionListener value="#{car}" target="#{homeBean.marcaSelecionada}" />
+                                            </p:commandLink>
+                                        </h:panelGrid>
+                                    </p:panel>
+                                </p:dataGrid>
+
+                                
+                            </h:form>
+                        </div>            
                     </div>
-                    <br></br>
-                    <hr></hr>
-                    <div id="container">
-                        <h:form>                         
-                                <h:dataTable value="#{veiculoBean.listaVeiculos}" var="veiculo" rules="rows" cellpadding="10">
-                                    <h:column>
-                                        <f:facet name="header">Marca</f:facet>
-                                            #{veiculo.marca}
-                                    </h:column>
-                                    <h:column>
-                                        <f:facet name="header">Modelo</f:facet>                                       
-                                        <h:outputText value="#{veiculo.modelo}" rendered="true" />
-                                    </h:column>
-                                    <h:column>
-                                        <f:facet name="header">Valor</f:facet>
-                                        <h:outputText value="R$ #{veiculo.valor}" rendered="true" />
-                                    </h:column>
-                                    <h:column>
-                                        <f:facet name="header">Ano</f:facet>
-                                        <h:outputText value="#{veiculo.ano}" rendered="true" />
-                                    </h:column>                
-                                </h:dataTable>
-                        </h:form>
-                    </div>            
-                </div>
-            </ui:define>
-        </ui:composition>
+                </ui:define>
+            </ui:composition>
+        </f:view>
     </h:body>
 </html>

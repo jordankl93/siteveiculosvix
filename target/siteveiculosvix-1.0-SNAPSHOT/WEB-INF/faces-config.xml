@@ -15,6 +15,18 @@
         <navigation-case>
             <from-outcome>home</from-outcome>
             <to-view-id>/home.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>faleconosco</from-outcome>
+            <to-view-id>/faleConosco.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>quemsomos</from-outcome>
+            <to-view-id>/quemSomos.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>comochegar</from-outcome>
+            <to-view-id>/comoChegar.xhtml</to-view-id>
         </navigation-case>        
     </navigation-rule>
 </faces-config>

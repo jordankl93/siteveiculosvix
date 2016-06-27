@@ -16,6 +16,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "veiculo")
 public class Veiculo implements Serializable { 
+
+    private static final long serialVersionUID = -8807804265768105283L;
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

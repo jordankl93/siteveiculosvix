@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
     <ui:composition>
         <div id="cabecalho">
@@ -17,13 +18,13 @@
                         <div id="menu_sup">
                             <h:panelGrid columns="4" cellspacing="10">
                                 <h:commandLink action="home" value="Home"/>
-                                <h:commandLink action="home" value="Fale Conosco"/>
-                                <h:commandLink action="home" value="Quem Somos"/>
-                                <h:commandLink action="home" value="Como Chegar"/>                        
+                                <h:commandLink action="faleconosco" value="Fale Conosco"/>
+                                <h:commandLink action="quemsomos" value="Quem Somos"/>
+                                <h:commandLink action="comoChegar" value="Como Chegar"/>                        
                             </h:panelGrid>
                         </div>
                         <div id="login">
-                            <h:commandButton action="home" value="Login" styleClass="botao"/>
+                            <p:commandButton action="home" value="Login" ajax="false"/>
                         </div>
                     </h:form>
                 </div>

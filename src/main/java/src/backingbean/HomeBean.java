@@ -16,16 +16,16 @@ import src.model.Veiculo;
  *
  * @author Jordan-PC
  */
-@ManagedBean(name = "veiculoBean")
+@ManagedBean(name = "homeBean")
 @SessionScoped
-public class VeiculoBean {
+public class HomeBean {
     private String marcaSelecionada;
     private List<String> listaMarcas =  new ArrayList<>();
     private List<Veiculo> listaVeiculos = new ArrayList<>();
     private Veiculo veiculo = new Veiculo();
     VeiculoCrudHibernate veiculoCrud = new VeiculoCrudHibernate();
     
-    public VeiculoBean() {
+    public HomeBean() {
         listaVeiculos = veiculoCrud.listar();
         listaMarcas = veiculoCrud.listarMarcas();
     }
@@ -69,7 +69,7 @@ public class VeiculoBean {
         return "home";
     }        
     
-    public String verLista() {
+    public String verListaVeiculos() {
         //popula a lista ...
         listaVeiculos = veiculoCrud.listar();
         //... e apresenta uma tabela com os registros

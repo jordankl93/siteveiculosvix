@@ -11,11 +11,6 @@ body {
     height: 100%;
 }
 
-.main_wrapper {
-    margin:auto;
-    width:100%;
-}
-
 /*Estilo header*/
 
 #cabecalho{
@@ -106,6 +101,11 @@ td a:hover
 {
     color: white;
     border-bottom: 3px solid white;
+}
+
+/*Estilo conteudo*/
+#content{
+    padding-bottom: 90px;
 }
 
 /*Estilo footer*/

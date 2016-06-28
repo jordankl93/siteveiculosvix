@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package src.crudHibernate;
+package src.dao;
 
 import src.model.Veiculo;
 import java.util.List;
@@ -15,7 +15,7 @@ import src.conexao.HibernateUtil;
  *
  * @author Jordan-PC
  */
-public class VeiculoCrudHibernate {
+public class VeiculoDAO {
     
     public void salvar(Veiculo veiculo) {
         Session sessao = null;

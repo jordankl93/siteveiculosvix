@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import src.crudHibernate.VeiculoCrudHibernate;
+import src.dao.VeiculoDAO;
 import src.model.Veiculo;
 
 /**
@@ -23,7 +23,7 @@ public class HomeBean {
     private List<String> listaMarcas =  new ArrayList<>();
     private List<Veiculo> listaVeiculos = new ArrayList<>();
     private Veiculo veiculo = new Veiculo();
-    VeiculoCrudHibernate veiculoCrud = new VeiculoCrudHibernate();
+    private VeiculoDAO veiculoCrud = new VeiculoDAO();
     
     public HomeBean() {
         listaVeiculos = veiculoCrud.listar();

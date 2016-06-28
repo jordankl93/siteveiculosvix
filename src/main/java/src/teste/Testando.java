@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 import src.model.Veiculo;
-import src.crudHibernate.VeiculoCrudHibernate;
+import src.dao.VeiculoDAO;
 
 /**
  *
@@ -18,7 +18,7 @@ import src.crudHibernate.VeiculoCrudHibernate;
 public class Testando {
     
     public static void main(String[] args){
-        VeiculoCrudHibernate obj = new VeiculoCrudHibernate();
+        VeiculoDAO obj = new VeiculoDAO();
         
         List<String> lista = obj.listarMarcas();
         

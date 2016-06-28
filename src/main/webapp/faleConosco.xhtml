@@ -14,23 +14,38 @@
         <f:view contentType="text/html">
             <ui:composition template="/templates/template.xhtml">            
                 <ui:define name="content">
-                    <h1>Fale Conosco</h1>
-                    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="10">
-                        <p:outputLabel value="Nome:" for="nome"/>
-                        <p:inputText id="nome" label="Nome" value="#{faleConoscoBean.proposta.nomeCliente}"
-                                     required="true"/>
-                        <p:outputLabel value="E-mail" for="email" />
-                        <p:inputText id="email" label="e-mail" value="#{faleConoscoBean.proposta.emailCliente}"
-                                     required="true"/>
-                        <p:outputLabel value="Telefone" for="telefone" />
-                        <p:inputText id="telefone" label="Telefone" value="#{faleConoscoBean.proposta.telefoneCliente}"
-                                     required="true"/>
-                        <p:outputLabel value="Mensagem" for="mensagem" />
-                        <p:inputTextarea id="mensagem" label="Mensagem" value="#{faleConoscoBean.proposta.mensegem}"
-                                         required="true"/>
-                        <h:outputText/>
-                        <p:commandButton action="faleconosco" value="Enviar"/>
-                    </h:panelGrid>
+                    <p:panel id="basic" header="Envie sua prosposta" styleClass="ui-panel-title" style="margin-bottom:20px">                        
+                        <h:form>
+                            <p:growl id="growl" life="3000" />
+                            <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="10">
+                                <p:outputLabel value="Nome:" for="nome"/>
+                                <p:inputText id="nome" label="Nome" value="#{faleConoscoBean.proposta.nomeCliente}"
+                                             required="true"/>
+                                <p:outputLabel value="E-mail:" for="email" />
+                                <p:inputText id="email" label="e-mail" value="#{faleConoscoBean.proposta.emailCliente}"
+                                             required="true"/>
+                                <p:outputLabel value="Telefone:" for="telefone" />
+                                <p:inputText id="telefone" label="Telefone" value="#{faleConoscoBean.proposta.telefoneCliente}"
+                                             required="true"/>
+                                <p:outputLabel value="Mensagem:" for="mensagem" />
+                                <p:inputTextarea id="mensagem" label="Mensagem" value="#{faleConoscoBean.proposta.mensegem}"
+                                                 rows="5" cols="30" maxlength="250" autoResize="false" required="true"/>
+                                <h:outputText/>
+                                <p:commandButton type="submit" action="#{faleConoscoBean.enviaProposta(faleConoscoBean.proposta)}" value="Enviar" ajax="false"/>
+                            </h:panelGrid>
+                        </h:form>
+                    </p:panel>
+                    <p:panel id="basic2" header="Endereço - Contato" styleClass="ui-panel-title" style="margin-bottom:20px">
+                        <h:form>
+                            <p:panelGrid columns="3" style="margin-bottom:10px" layout="grid">
+                                <h:outputText value="São Vicente - Baixo Guandu - ES" /> 
+                                <h:outputText value="Av. rei pelé, 76" />                             
+                                <p:commandLink type="submit" action="comochegar" value="(ver mapa)" ajax="false"/>
+                                <h:outputText value="(27) 3245-8909" />
+                                <h:outputText value="veiculo@veiculovix.com.br" />
+                            </p:panelGrid>
+                        </h:form>
+                    </p:panel>
                 </ui:define>
             </ui:composition>
         </f:view>

@@ -23,6 +23,9 @@
     <mapping class="src.model.Veiculo"/>
     <mapping class="src.model.Proposta"/>
     <mapping class="src.model.Endereco"/>
-    <mapping class="src.model.Loja"/>
+    <mapping class="src.model.Funcionario"/>
+    <mapping class="src.model.Permissao"/>
+    <mapping class="src.model.Tipo_Permissao"/>
+    <mapping class="src.model.Telefone"/>
   </session-factory>
 </hibernate-configuration>

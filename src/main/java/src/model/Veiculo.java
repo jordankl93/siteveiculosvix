@@ -41,7 +41,34 @@ public class Veiculo implements Serializable {
     
     @Column(name = "extra", length = 200, nullable = false)
     private String extra;
+    
+    @Column(name = "vendido", nullable = true)
+    private boolean vendido;
 
+    public Veiculo(Double valor, String marca, String modelo, int ano, String opcionais, String extra) {
+        this.valor = valor;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+        this.opcionais = opcionais;
+        this.extra = extra;
+    }
+
+    public Veiculo() {
+        
+    }
+
+    public void Vender(){
+        this.vendido = true;
+    }
+    
+    public boolean Vendido(){
+        if(this.vendido == true){
+            return this.vendido;
+        }
+        return false;
+    }
+    
     public Integer getIdVeiculo() {
         return idVeiculo;
     }

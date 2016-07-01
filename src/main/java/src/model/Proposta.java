@@ -35,10 +35,41 @@ public class Proposta implements Serializable {
     @Column(name = "telefonecliente", length = 30, nullable = false)
     private String telefoneCliente;
 
+    @Column(name = "aceita", nullable = true)
+    private boolean aceita;
+    
     @ManyToOne
     @JoinColumn(name = "idveiculo")
     private Veiculo veiculo;
 
+    public Proposta(String mensegem, String nomeCliente, String emailCliente, String telefoneCliente, Veiculo veiculo) {
+        this.mensegem = mensegem;
+        this.nomeCliente = nomeCliente;
+        this.emailCliente = emailCliente;
+        this.telefoneCliente = telefoneCliente;
+        this.veiculo = veiculo;
+    }
+
+    public Proposta() {
+       
+    }
+
+    public void Aceitar(boolean aceitou){
+        if(this.veiculo == null){
+            throw new UnsupportedOperationException("Não eh possivel aceitar a proposta pois o veiculo nao existe."); 
+        }
+        this.veiculo.Vender();
+        this.aceita = aceitou;
+    }
+    
+    public boolean Aceita(){
+        if(this.aceita == true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
     /*Get's e Set's*/
     public Integer getIdProposta() {
         return idProposta;

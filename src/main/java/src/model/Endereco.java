@@ -37,6 +37,20 @@ public class Endereco implements Serializable {
     
     @Column(name = "pais", length = 45, nullable = false)
     private String pais;
+    
+    public Endereco(){
+        
+    }
+
+    public Endereco(String rua, String cidade, String cep, String estado, String pais) {
+        this.rua = rua;
+        this.cidade = cidade;
+        this.cep = cep;
+        this.estado = estado;
+        this.pais = pais;
+    }
+
+    
 
     public Integer getIdEndereco() {
         return idEndereco;

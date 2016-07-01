@@ -5,6 +5,7 @@
  */
 package src.backingbean;
 
+import java.io.Serializable;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -18,7 +19,9 @@ import src.model.Proposta;
  */
 @ManagedBean(name = "faleConoscoBean")
 @SessionScoped
-public class FaleConoscoBean {
+public class FaleConoscoBean implements Serializable{
+
+    private static final long serialVersionUID = 834057895185723461L;
 
     private Proposta proposta;
     private PropostaDAO propostaDAO;

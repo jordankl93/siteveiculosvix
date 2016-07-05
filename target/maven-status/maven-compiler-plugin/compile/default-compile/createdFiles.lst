@@ -9,8 +9,9 @@ src\model\Proposta.class
 src\model\Telefone.class
 src\backingbean\HomeBean.class
 src\dao\LojaDAO.class
+src\util\SampleEntity.class
 src\model\Tipo_Permissao.class
-src\model\Cliente.class
 src\dao\PropostaDAO.class
+src\util\GenericConverter.class
 src\model\Loja.class
 src\model\Funcionario.class

@@ -7,6 +7,7 @@ package src.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import src.util.SampleEntity;
 
 /**
  *
@@ -15,14 +16,14 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "veiculo")
-public class Veiculo implements Serializable { 
+public class Veiculo implements Serializable, SampleEntity { 
 
     private static final long serialVersionUID = -8807804265768105283L;
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idveiculo")
-    private Integer idVeiculo;
+    private Long idVeiculo;
     
     @Column(name = "valor")
     private Double valor;
@@ -69,11 +70,11 @@ public class Veiculo implements Serializable {
         return false;
     }
     
-    public Integer getIdVeiculo() {
+    public Long getIdVeiculo() {
         return idVeiculo;
     }
 
-    public void setIdVeiculo(Integer idVeiculo) {
+    public void setIdVeiculo(Long idVeiculo) {
         this.idVeiculo = idVeiculo;
     }
 

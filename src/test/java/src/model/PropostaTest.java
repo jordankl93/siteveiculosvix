@@ -1,10 +1,11 @@
-package src.test;
+package src.model;
 
 import static junit.framework.Assert.assertEquals;
 import org.junit.Test;
 import src.model.*;
+import static junit.framework.Assert.assertEquals;
 
-public class TDD_Proposta {
+public class PropostaTest {
 
     @Test
     public void deveriaAceitarUmaProposta() throws Exception {

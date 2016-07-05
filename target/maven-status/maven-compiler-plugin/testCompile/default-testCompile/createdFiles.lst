@@ -1,2 +1,4 @@
-src\test\TDD_Veiculo.class
-src\test\TDD_Proposta.class
+src\model\PropostaTest.class
+src\model\PropostaTestBDD.class
+src\dao\VeiculoDAOTest.class
+src\model\VeiculoTest.class

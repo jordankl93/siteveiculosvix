@@ -27,6 +27,14 @@
                                 <p:outputLabel value="Telefone:" for="telefone" />
                                 <p:inputText id="telefone" label="Telefone" value="#{faleConoscoBean.proposta.telefoneCliente}"
                                              required="true"/>
+                                <p:outputLabel value="Veículo:" for="veiculo" />
+                                <p:selectOneMenu id="veiculo" value="#{faleConoscoBean.proposta.veiculo}" converter="generic" style="width:300px; padding-bottom: 2px;">
+                                    <f:selectItem itemLabel="Nenhum..." itemValue=""/>
+                                    <f:selectItems value="#{homeBean.listaVeiculos}"
+                                                   var="carro"
+                                                   itemValue="#{carro}"
+                                                   itemLabel="#{carro.marca} #{carro.modelo}"/>                                    
+                                </p:selectOneMenu>
                                 <p:outputLabel value="Mensagem:" for="mensagem" />
                                 <p:inputTextarea id="mensagem" label="Mensagem" value="#{faleConoscoBean.proposta.mensegem}"
                                                  rows="5" cols="30" maxlength="250" autoResize="false" required="true"/>
